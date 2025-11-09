@@ -32,7 +32,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       <div className="space-y-2 overflow-y-auto flex-1">
-        {trips.map((trip, index) => {
+        {trips.map((trip) => {
           const state = tripStates[trip.trip_id];
           const progress = state ? Math.round((state.currentIndex / trip.events.length) * 100) : 0;
           const isActive = activeTripId === trip.trip_id;

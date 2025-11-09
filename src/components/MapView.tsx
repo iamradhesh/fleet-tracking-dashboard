@@ -54,7 +54,8 @@ export default function MapView() {
   useEffect(() => {
     if (trips.length === 0) return;
 
-    const intervals: (NodeJS.Timeout | null)[] = [];
+   const intervals: (ReturnType<typeof setInterval> | null)[] = [];
+
     trips.forEach((trip) => {
       const state = tripStates[trip.trip_id];
       if (state && state.isPlaying) {
